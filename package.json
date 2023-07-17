@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+    "secret-agent": "^1.6.5"
+  }
+}

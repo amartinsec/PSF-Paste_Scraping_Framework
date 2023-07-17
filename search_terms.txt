@@ -1,0 +1,304 @@
+invoke-dllinjection
+invoke-shellcode
+invoke-wmicommand
+get-gpppassword
+get-keystrokes
+get-timedscreenshot
+get-vaultcredential
+invoke-credentialinjection
+invoke-ninjacopy
+invoke-tokenmanipulation
+out-minidump
+volumeshadowcopytools
+invoke-reflectivepeinjection
+invoke-userhunter
+find-gpolocation
+invoke-aclscanner
+invoke-downgradeaccount
+get-serviceunquoted
+get-servicefilepermission
+get-servicepermission
+invoke-serviceabuse
+install-servicebinary
+get-regautologon
+get-vulnautorun
+get-vulnschtask
+get-unattendedinstallfile
+get-applicationhost
+get-regalwaysinstallelevated
+get-unconstrained
+add-regbackdoor
+add-scrnsavebackdoor
+gupt-backdoor
+invoke-adsbackdoor
+enabled-duplicatetoken
+invoke-psuacme
+remove-update
+check-vm
+get-lsasecret
+get-passhashes
+show-targetscreen
+port-scan
+invoke-poshrathttp
+invoke-powershelltcp
+invoke-powershellwmi
+add-exfiltration
+add-persistence
+do-exfiltration
+start-captureserver
+get-chromedump
+get-clipboardcontents
+get-foxdump
+get-indexeditem
+get-screenshot
+invoke-inveigh
+responder
+invoke-netripper
+invoke-egresscheck
+invoke-postexfil
+invoke-psinject
+runas
+mailraider
+new-honeyhash
+set-macattribute
+invoke-dcsync
+invoke-powerdump
+exploit-jboss
+invoke-thunderstruck
+invoke-voicetroll
+set-wallpaper
+invoke-inveighrelay
+invoke-psexec
+invoke-sshcommand
+get-securitypackages
+install-ssp
+invoke-backdoorlnk
+powerbreach
+get-sitelistpassword
+get-system
+invoke-bypassuac
+invoke-tater
+invoke-wscriptbypassuac
+powerup
+powerview
+get-rickastley
+find-fruit
+http-login
+find-trusteddocuments
+invoke-paranoia
+invoke-winenum
+invoke-arpscan
+invoke-portscan
+invoke-reversednslookup
+invoke-smbscanner
+invoke-mimikittenz
+invoke-allchecks
+system.reflection.assembly.load
+[system.reflection.assembly]::load
+[reflection.assembly]::load
+system.reflection.assemblyname
+reflection.emit.assemblybuilderaccess
+runtime.interopservices.dllimportattribute
+suspendthread
+dumpcreds
+mimikatz
+bloodhound
+sharphound
+del (get-psreadlineoption).historysavepath
+set-psreadlineoption –historysavestyle savenothing
+remove-item (get-psreadlineoption).historysavepath
+rm (get-psreadlineoption).historysavepath
+new-localuser
+start-dnscat2
+metasploit
+kali
+adjusttokenprivileges
+image_nt_optional_hdr64_magic
+microsoft.win32.unsafenativemethods
+readprocessmemory.invoke
+se_privilege_enabled
+lsa_unicode_string
+minidumpwritedump
+page_execute_read
+security_delegation
+token_adjust_privileges
+token_all_access
+token_assign_primary
+token_duplicate
+token_elevation
+token_impersonate
+token_information_class
+token_privileges
+token_query
+add-constraineddelegationbackdoor
+set-dcshadowpermissions
+dns_txt_pwnage
+execute-ontime
+http-backdoor
+set-remotepsremoting
+set-remotewmi
+invoke-amsibypass
+out-chm
+out-hta
+out-scf
+out-sct
+out-shortcut
+out-webquery
+out-word
+enable-duplication
+download-execute-ps
+download_execute
+execute-command-mssql
+execute-dnstxt-code
+out-rundllcommand
+copy-vss
+firebuster
+firelistener
+get-information
+get-passhints
+get-wlan-keys
+get-web-credentials
+invoke-credentialsphish
+wdigest
+invoke-ssidexfil
+invoke-sessiongopher
+keylogger
+invoke-interceptor
+create-multiplesessions
+invoke-networkrelay
+run-exeonremote
+invoke-prasadhak
+invoke-bruteforce
+password-list
+invoke-jsratregsvr
+invoke-jsratrundll
+invoke-poshrathttps
+invoke-powershellicmp
+invoke-powershelludp
+invoke-psgcat
+invoke-psgcatagent
+remove-poshrat
+add-persistance
+exetotext
+invoke-decode
+invoke-encode
+parse_keys
+remove-persistence
+stringtobase64
+texttoexe
+powerpreter
+nishang
+encodeddata
+encode
+datatoencode
+loggedkeys
+out-dnstxt
+jitter
+exfiloption
+tamper
+dumpcerts
+shellcode32
+shellcode64
+notallnamespaces
+exfill
+fakedc
+exploit
+ps attack!!!
+system.net.webclient
+.downloadfile(
+-nop -w hidden -c * [convert]::frombase64string
+w hidden -noni -nop -c "iex(new-object
+-w hidden -ep bypass -enc
+powershell.exe reg add hkcu\software\microsoft\windows\currentversion\run
+bypass -noprofile -windowstyle hidden (new-object system.net.webclient).download
+iex(new-object net.webclient).download
+reg save hklm\system
+reg save hklm\sam
+reg save hklm\security
+reg save hkey_local_machine\system
+reg save hkey_local_machine\sam
+reg save hkey_local_machine\security
+reg export hklm\system
+reg export hklm\sam
+reg export hklm\security
+reg export hkey_local_machine\system
+reg export hkey_local_machine\sam
+reg export hkey_local_machine\security
+asreproast
+dump /service:krbtgt
+kerberoast
+createnetonly /program:
+ptt /ticket:
+/impersonateuser:
+renew /ticket:
+asktgt /user:
+harvest /interval:
+createminidump.exe
+procdump
+psexec
+psexesvc
+paexec
+sekurlsa
+system.management.automation.amsiutils
+-nop -sta -noni -w hidden -enc
+-nop -sta -w 1 -enc
+-nop -noni -w hidden -enc
+-enc  sqb
+-nop -exec bypass -encodedcommand sqb
+whoami
+net user
+sqlmap
+dumped to csv file
+administrator
+krbtgt
+dpapi_userkey
+dpapi_machinekey
+secretsdump.
+exploit
+Rubeus
+TargetDomainName
+GPOChanges
+KRBTGT
+api_key
+apikey
+api-key
+api-token
+api_token
+api-secret
+api_secret
+secret_key
+secret-key
+secret_token
+0day
+breach
+exploit
+magnet
+phish
+dump
+pwn
+ hax
+h4x
+h4ck
+h4x0r
+hack
+cobaltstrike
+beacon
+aggressor
+empire
+msfconsole
+meterpreter
+cve
+ransom
+paypal
+carding
+scam
+.onion
+ tor
+tox
+shell
+western union
+sql
+dob
+skimmer
+vpn
+proxy
