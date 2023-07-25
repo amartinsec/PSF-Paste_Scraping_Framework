@@ -189,7 +189,6 @@ texttoexe
 powerpreter
 nishang
 encodeddata
-encode
 datatoencode
 loggedkeys
 out-dnstxt
@@ -207,8 +206,10 @@ ps attack!!!
 system.net.webclient
 .downloadfile(
 -nop -w hidden -c * [convert]::frombase64string
-w hidden -noni -nop -c "iex(new-object
--w hidden -ep bypass -enc
+-ep bypass
+-w hidden
+-enc
+-encodedcommand
 powershell.exe reg add hkcu\software\microsoft\windows\currentversion\run
 bypass -noprofile -windowstyle hidden (new-object system.net.webclient).download
 iex(new-object net.webclient).download
@@ -253,7 +254,7 @@ administrator
 krbtgt
 dpapi_userkey
 dpapi_machinekey
-secretsdump.
+secretsdump
 exploit
 Rubeus
 TargetDomainName
@@ -274,13 +275,13 @@ breach
 exploit
 magnet
 phish
-dump
-pwn
+pw dump
+ pwn
  hax
 h4x
 h4ck
 h4x0r
-hack
+hacking
 cobaltstrike
 beacon
 aggressor
@@ -294,11 +295,16 @@ carding
 scam
 .onion
  tor
-tox
+ tox
 shell
 western union
 sql
-dob
+ dob
 skimmer
-vpn
-proxy
+fortinet
+drugs
+iptv
+ip-tv
+leaked
+leak
+dork

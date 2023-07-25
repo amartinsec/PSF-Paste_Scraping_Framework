@@ -30,6 +30,7 @@ will only index first 250 lines of paste content and add indacator that it's bee
 TO IMPLEMENT:
     fix cases where the paste has expired
     FIX GETTING LAST INDEXED KEY FROM ELASTICSEARCH
+    get most recent index and sleep if reached
 
 '''
 
@@ -99,7 +100,10 @@ except:
     print("No company_names.txt file found")
 
 
+
 ###========================GLOBALS========================###
+# List of syntaxes to ignore
+ignore_syntax = ['html', 'css', 'swift', 'lua',]
 
 
 ###========================FUNCTIONS========================###
@@ -163,6 +167,13 @@ def get_paste_meta(key):
     return paste_title, paste_syntax, date_time, user
 
 def send_to_elastic(key, content, hit_type, keyword_match, yara_matches, paste_title, paste_syntax, paste_date_time, paste_user):
+
+    for x in ignore_syntax:
+        if x in (paste_syntax) or (x in paste_title):
+            print(Fore.RED + "[-] " + Fore.RESET + "Ignoring paste-bin.xyz\\"+str(key) + " " + "due to syntax: " + x)
+            return
+
+
     print(Fore.GREEN + "[!] " + Fore.RESET + "Sending to cluster..: paste-bin.xyz\\"+str(key) + " due to " + hit_type + "match of " + keyword_match.replace(",", "") + " " + str(yara_matches))
 
     line_count = content.count("\n")
@@ -295,22 +306,39 @@ def search_paste_content(key):
     else:
         pass
 
+def get_newest_paste_index():
+    url = "https://paste-bin.xyz/"
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36'}
+    raw_response = requests.get(url, headers=headers)
+    soup = bs(raw_response.text, "html.parser")
+    return int((soup.find("header", {"class": "bd-category-header my-1"}).find("a")['href'].split("xyz/")[1]))
+    print("Last public paste-bin.xyz index: " + str(most_recent_paste_index))
+
+
 # Main loop
 def scrape():
     print("Starting scrape of paste-bin.xyz with the following keywords:")
     print(keywords)
     starting_index = get_last_index()
     key=starting_index
-    print("Last highest index " + str(starting_index))
+    print("Last highest index in Elastic cluster: " + str(starting_index))
+    most_recent_paste_index = get_newest_paste_index()
+    print("Last public paste-bin.xyz index: " + str(most_recent_paste_index))
+
 
     while True:
         try:
-            key+=1
-            search_paste_content(key)
+            if key >= most_recent_paste_index:
+                print("Reached most recent paste, sleeping for a day...")
+                sleep(86400)
+                most_recent_paste_index = get_newest_paste_index()
+            else:
+                key+=1
+                search_paste_content(key)
         except Exception as e:
             print("Error in main loop: ", e)
 
-        sleep(.5)
 
 
 if __name__ == "__main__":
