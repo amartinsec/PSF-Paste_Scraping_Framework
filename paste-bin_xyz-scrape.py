@@ -91,7 +91,7 @@ keywords = []
 try:
     keywords = open('search_terms.txt', 'r').read().split('\n')
 except:
-    print("No search_terms.txt file found")
+    print(Fore.RED + "[-] " + Fore.RESET +"No search_terms.txt file found")
 
 
 # grab company names from company_names.txt file. 1 per line
@@ -99,7 +99,7 @@ try:
     company_names = open('company_names.txt', 'r').read().split('\n')
     keywords = keywords + company_names
 except:
-    print("No company_names.txt file found")
+    print(Fore.RED + "[-] " + Fore.RESET +"No company_names.txt file found")
 
 while("" in keywords):
     keywords.remove('')
@@ -239,7 +239,7 @@ def search_paste_content(key):
         paste_date_time = paste_meta[2]
         paste_user = paste_meta[3]
     except Exception as e:
-        print("Error getting paste meta: " + str(e))
+        print(Fore.RED + "[-] " + Fore.RESET + "Error getting paste meta: " + str(e))
     # Prints the content of the most recent pastes
     hits = 0
     # Check searched_keys buffer size
@@ -321,13 +321,13 @@ def get_newest_paste_index():
 
 # Main loop
 def scrape():
-    print("\nStarting scrape of paste-bin.xyz with the following keywords:")
+    print("\n" + Fore.GREEN + "[!] " + Fore.RESET +"Starting scrape of paste-bin.xyz with the following keywords:")
     print(keywords)
     starting_index = get_last_index()
-    key=starting_index
-    print("Last highest index in Elastic cluster: " + str(starting_index))
+    key = starting_index
+    print(Fore.GREEN + "[!] " + Fore.RESET +"Last highest index in Elastic cluster: " + str(starting_index))
     most_recent_paste_index = get_newest_paste_index()
-    print("Last public paste-bin.xyz index: " + str(most_recent_paste_index))
+    print(Fore.GREEN + "[!] " + Fore.RESET +"Last public paste-bin.xyz index: " + str(most_recent_paste_index))
 
 
     while True:
@@ -341,7 +341,6 @@ def scrape():
                 search_paste_content(key)
         except Exception as e:
             print("Error in main loop: ", e)
-
 
 
 if __name__ == "__main__":
