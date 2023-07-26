@@ -99,7 +99,8 @@ try:
 except:
     print("No company_names.txt file found")
 
-
+while("" in keywords):
+    keywords.remove('')
 
 ###========================GLOBALS========================###
 # List of syntaxes to ignore
