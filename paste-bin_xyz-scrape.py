@@ -321,8 +321,8 @@ def get_newest_paste_index():
 
 # Main loop
 def scrape():
-    print("\n" + Fore.GREEN + "[!] " + Fore.RESET +"Starting scrape of paste-bin.xyz with the following keywords:")
-    print("\n" + Fore.GREEN + "[!] " + Fore.RESET + str(len(keywords)) + " keywords included in search")
+    print("\n" + Fore.GREEN + "[!] " + Fore.RESET +"Starting scrape of paste-bin.xyz")
+    print(Fore.GREEN + "[!] " + Fore.RESET + str(len(keywords)) + " keywords included in search")
     starting_index = get_last_index()
     key = starting_index
     print(Fore.GREEN + "[!] " + Fore.RESET +"Last highest index in Elastic cluster: " + str(starting_index))
