@@ -230,7 +230,7 @@ def search_paste_content(key):
 
     paste_data = get_paste_content(str(key))
     if not paste_data:
-        print(Fore.RED + "[-] " + Fore.RESET + "No paste found or paste is password protected for key: " + str(key))
+        #print(Fore.RED + "[-] " + Fore.RESET + "No paste found or paste is password protected for key: " + str(key))
         return
     try:
         paste_meta=get_paste_meta(str(key))
