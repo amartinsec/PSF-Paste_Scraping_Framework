@@ -91,6 +91,10 @@ try:
 except:
     print("No company_names.txt file found")
 
+# On linux, '' was being added to the search terms making the search match on everything
+# This removes any empty strings from the list
+keywords = list(filter(None, keywords))
+
 
 ###========================GLOBALS========================###
 # List to track searched keys
