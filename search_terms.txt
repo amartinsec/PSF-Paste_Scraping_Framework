@@ -292,6 +292,7 @@ cve
 ransom
 paypal
 carding
+T*kens
 scam
 .onion
  tor
@@ -299,6 +300,7 @@ scam
 shell
 western union
 sql
+backdoor
  dob
 skimmer
 fortinet
