@@ -45,9 +45,11 @@ from datetime import datetime
 from elasticsearch import Elasticsearch
 from datetime import datetime
 from bs4 import BeautifulSoup as bs
+from welcome import *
 
 import yara
 
+welcome_art()
 
 ###========================YARA========================###
 rules = yara.compile(filepath='yara/index.yar')
@@ -319,7 +321,7 @@ def get_newest_paste_index():
 
 # Main loop
 def scrape():
-    print("Starting scrape of paste-bin.xyz with the following keywords:")
+    print("\nStarting scrape of paste-bin.xyz with the following keywords:")
     print(keywords)
     starting_index = get_last_index()
     key=starting_index
